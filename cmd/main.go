@@ -53,7 +53,7 @@ func startServer(serverConf models.ServerConfig) {
 
 	err := http.ListenAndServe(":"+serverConf.SERVER_PORT, mux)
 	if err != nil {
-		utils.SaveLog("Failed to start server")
+		utils.SaveLog(fmt.Sprintf("Failed to start server: %s", err.Error()))
 		panic("Failed to start server")
 	}
 }
@@ -61,7 +61,7 @@ func startServer(serverConf models.ServerConfig) {
 func startDatabase(dbConf models.DBConfig, startDatabaseTask chan bool) {
 	_, err := pkg.DBConnection(dbConf)
 	if err != nil {
-		utils.SaveLog("Failed to connect to database")
+		utils.SaveLog(fmt.Sprintf("Failed to connect to database: %s", err.Error()))
 		panic("Failed to connect to database")
 	}
 
