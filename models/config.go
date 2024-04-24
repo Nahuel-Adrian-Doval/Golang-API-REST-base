@@ -1,13 +1,15 @@
 package models
 
 type DBConfig struct {
-	DB_HOST     string
-	DB_PORT     string
-	DB_USER     string
-	DB_PASSWORD string
-	DB_NAME     string
-	DB_SSLMODE  string
-	DB_TIMEZONE string
+	DATABASE_PORT string
+
+	DATABASE_HOST     string
+	POSTGRES_USER     string
+	POSTGRES_PASSWORD string
+	POSTGRES_DB       string
+
+	DATABASE_SSLMODE  string
+	DATABASE_TIMEZONE string
 }
 
 type ServerConfig struct {

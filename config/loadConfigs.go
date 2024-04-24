@@ -8,13 +8,15 @@ import (
 
 func LoadDBConfig() models.DBConfig {
 	return models.DBConfig{
-		DB_HOST:     os.Getenv("DB_HOST"),
-		DB_PORT:     os.Getenv("DB_PORT"),
-		DB_USER:     os.Getenv("DB_USER"),
-		DB_PASSWORD: os.Getenv("DB_PASSWORD"),
-		DB_NAME:     os.Getenv("DB_NAME"),
-		DB_SSLMODE:  os.Getenv("DB_SSLMODE"),
-		DB_TIMEZONE: os.Getenv("DB_TIMEZONE"),
+		DATABASE_PORT: os.Getenv("DATABASE_PORT"),
+
+		DATABASE_HOST:     os.Getenv("DATABASE_HOST"),
+		POSTGRES_USER:     os.Getenv("POSTGRES_USER"),
+		POSTGRES_PASSWORD: os.Getenv("POSTGRES_PASSWORD"),
+		POSTGRES_DB:       os.Getenv("POSTGRES_DB"),
+
+		DATABASE_SSLMODE:  os.Getenv("DATABASE_SSLMODE"),
+		DATABASE_TIMEZONE: os.Getenv("DATABASE_TIMEZONE"),
 	}
 }
 
